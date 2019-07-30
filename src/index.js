@@ -1,14 +1,16 @@
 const express = require('express')
-const mysql = require('mysql')
 
 const userRouter = require('./routers/userRouter')
+const taskRouter = require('./routers/taskRouter')
 
-const server = express()
+const app = express()
 const port = 2019
 
-server.use(express.json())
-server.use(userRouter)
+app.use(express.json())
+app.use(userRouter)
+app.use(taskRouter)
 
-server.listen(port, () => {
-    console.log('berhasil running di ' + port);
+app.listen(port, () => {
+    console.log('Berhasil Running di ' + port);
+    
 })
