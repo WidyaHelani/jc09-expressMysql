@@ -6,6 +6,7 @@ const path = require('path')
 const fs = require('fs')
 const multer = require('multer')
 const mailVerify = require('../email/nodemailer')
+const powrt = require('../config/port')
 
 
 // __dirname: alamat folder file userRouter.js
@@ -169,7 +170,7 @@ router.get('/users/profile/:username', (req, res) => {
             username : user.username,
             name : user.name,
             email : user.email,
-            avatar: `localhost:2019/users/avatar/${user.avatar}`
+            avatar: `localhost:${powrt}/users/avatar/${user.avatar}`
         })
     })
 })
